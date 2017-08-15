@@ -31,7 +31,7 @@ graph_unit_size_x = graph_width / ((max_graph_number_x - start_graph_number)*2+1
 
 line_y_start = (window_width*0.5, window_height*0.02)  # začetna pozicija osi y
 line_x_start = (window_width*0.02, line_y_start[1]+graph_height/2)  # začetna pozicija osi x
-line_width = 3 # debelina osi
+line_width = 3 # debelina osi v pikslih
 # števila bodo spremenila pozicije osi x in y
 
 
@@ -39,4 +39,4 @@ show_numbers = True  # ali naj računalnik pokaže pomožna števila
 show_multples_of = 1  # računalnik bo pomožno število prikazal le, če je deljivo z show_multiples_of
 
 show_help_lines = True  # ali naj računalnik pokaže pomožne črte
-help_line_width = 1  # debelina pomožnih črt
+help_line_width = 1  # debelina pomožnih črt v pikslih

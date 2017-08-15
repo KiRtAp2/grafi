@@ -1,3 +1,5 @@
+import math
+
 import func
 import constants
 import pygame
@@ -25,7 +27,7 @@ def draw_lines():
     )
 
 
-def draw_points(f):
+def draw_points(f=func.f, color=colors.black):
     """Funkcija izriše točke v grafu, vzame en argument - funkcijo f"""
 
     x = constants.start_graph_number # nastavi začetko vrednost na constants.start_graph_number
@@ -35,7 +37,7 @@ def draw_points(f):
         if abs(y) <= constants.max_graph_number_y: # če y ni prevelik, ga izriše
             pygame.draw.rect(
                 window,
-                colors.black,
+                color,
                 (x*constants.graph_unit_size_x+constants.line_y_start[0]+constants.line_width, constants.line_x_start[1]-(y*constants.graph_unit_size_y), 2, 2)
             )
         else: # če y je prevelik, preneha šteti
@@ -49,7 +51,7 @@ def draw_points(f):
         if abs(y) <= constants.max_graph_number_y:
             pygame.draw.rect(
                 window,
-                colors.black,
+                color,
                 (x * constants.graph_unit_size_x + constants.line_y_start[0] + constants.line_width, constants.line_x_start[1] - (y * constants.graph_unit_size_y), 2, 2)
             )
         else:
@@ -140,7 +142,9 @@ def main():
     draw_lines()
     if constants.show_numbers:
         show_numbers(constants.font)
-    draw_points(func.f)
+
+    # add more draw_points commands to see more graphs
+    draw_points(f=func.f, color=colors.black)
 
     pygame.display.update()
 
