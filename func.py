@@ -5,5 +5,5 @@ import math
 
 
 def f(x):
-    return math.sin(x)+3
+    return math.ceil(x)
 

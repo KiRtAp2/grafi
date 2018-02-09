@@ -79,39 +79,6 @@ def show_utils(font):
                     (0, consts.LINE_START_X[1] - i * consts.GUNIT_SIZE_Y, consts.WWIDTH, consts.HELP_LINE_WIDTH)
                 )
 
-    # start_number = font.render(str(consts.GRAPHSTART), True, colors.BLACK) # prvo število je posebno
-    # window.blit(start_number, (consts.LINE_START_Y[0] - 20, consts.LINE_START_X[1] + 5 + consts.LINE_WIDTH))
-    #
-    # for i in range(consts.GRAPHSTART+1, consts.GRAPH_MAX_Y+1):
-    #     if i%consts.SHOW_MULTIPLES_OF==0:
-    #         surf = font.render(str(i), True, colors.BLACK)
-    #         pos = (
-    #             consts.LINE_START_Y[0] - 45,
-    #             consts.LINE_START_X[1] - i * consts.GUNIT_SIZE_Y,
-    #         )
-    #         window.blit(surf, pos)
-    #         if consts.DO_SHOW_HELP_LINES:
-    #             pygame.draw.rect(
-    #                 window,
-    #                 colors.LIGHTGRAY,
-    #                 (0, consts.LINE_START_X[1] - i * consts.GUNIT_SIZE_Y, consts.WWIDTH, consts.HELP_LINE_WIDTH)
-    #             )
-    #
-    # for i in range(-consts.GRAPH_MAX_Y, consts.GRAPHSTART):
-    #     if abs(i)%consts.SHOW_MULTIPLES_OF==0:
-    #         surf = font.render(str(i), True, colors.BLACK)
-    #         pos = (
-    #             consts.LINE_START_Y[0] - 60,
-    #             consts.LINE_START_X[1] - i * consts.GUNIT_SIZE_Y,
-    #         )
-    #         window.blit(surf, pos)
-    #         if consts.DO_SHOW_HELP_LINES:
-    #             pygame.draw.rect(
-    #                 window,
-    #                 (200, 200, 200),
-    #                 (0, consts.LINE_START_X[1] - i * consts.GUNIT_SIZE_Y, consts.WWIDTH, consts.HELP_LINE_WIDTH)
-    #             )
-
     for i in range(-consts.GRAPH_MAX_Y, consts.GRAPH_MAX_X+1):
         if not i % consts.SHOW_MULTIPLES_OF:
 
@@ -135,47 +102,6 @@ def show_utils(font):
                         consts.WHEIGHT
                     )
                 )
-
-
-    # for i in range(consts.GRAPHSTART+1, consts.GRAPH_MAX_X+1):
-    #     if i%consts.SHOW_MULTIPLES_OF==0:
-    #         surf = font.render(str(i), True, (0, 0, 0))
-    #         pos = (
-    #             consts.LINE_START_Y[0] + i * consts.GUNIT_SIZE_X,
-    #             consts.LINE_START_X[1] + 10
-    #         )
-    #         window.blit(surf, pos)
-    #         if consts.DO_SHOW_HELP_LINES:
-    #             pygame.draw.rect(
-    #                 window,
-    #                 (200, 200, 200),
-    #                 (
-    #                     consts.LINE_START_Y[0] + i * consts.GUNIT_SIZE_X,
-    #                     0,
-    #                     consts.HELP_LINE_WIDTH,
-    #                     consts.WHEIGHT
-    #                 )
-    #             )
-    #
-    # for i in range(-consts.GRAPH_MAX_X, consts.GRAPHSTART):
-    #     if i%consts.SHOW_MULTIPLES_OF==0:
-    #         surf = font.render(str(i), True, (0, 0, 0))
-    #         pos = (
-    #             consts.LINE_START_Y[0] + i * consts.GUNIT_SIZE_X,
-    #             consts.LINE_START_X[1] + 10
-    #         )
-    #         window.blit(surf, pos)
-    #         if consts.DO_SHOW_HELP_LINES:
-    #             pygame.draw.rect(
-    #                 window,
-    #                 (200, 200, 200),
-    #                 (
-    #                     consts.LINE_START_Y[0] + i * consts.GUNIT_SIZE_X,
-    #                     0,
-    #                     consts.HELP_LINE_WIDTH,
-    #                     consts.WHEIGHT
-    #                 )
-    #             )
 
 
 def main():
