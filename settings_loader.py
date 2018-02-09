@@ -8,6 +8,7 @@ def read_file(file):
     global settings
     settings = json.load(file)
 
+
 # Must be called first! Ensures settings will be loaded correctly
 def load():
     try:
