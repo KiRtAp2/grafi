@@ -34,24 +34,47 @@ def draw_points(f=func.f, color=colors.BLACK):
     x = -consts.GRAPH_MAX_X
     while x <= consts.GRAPH_MAX_X:
         try:
-            y = f(x)
+            res = f(x)
 
         except ZeroDivisionError:
             pass  # ni potrebno risati točke, ker primanjklaj nebi smel biti opazen
 
+        except ValueError:
+            pass
+
         else:
-            rect = (
-                x*consts.GUNIT_SIZE_X+consts.LINE_START_Y[0]+consts.LINE_WIDTH,
-                consts.LINE_START_X[1]-(y*consts.GUNIT_SIZE_Y),
-                2,
-                3
-            )
-            if abs(y) <= consts.GRAPH_MAX_Y:
-                pygame.draw.rect(
-                    window,
-                    color,
-                    rect
+
+            if isinstance(res, tuple()):
+                y = res
+
+                rect = (
+                    x*consts.GUNIT_SIZE_X+consts.LINE_START_Y[0]+consts.LINE_WIDTH,
+                    consts.LINE_START_X[1]-(y*consts.GUNIT_SIZE_Y),
+                    2,
+                    2
                 )
+                if abs(y) <= consts.GRAPH_MAX_Y:
+                    pygame.draw.rect(
+                        window,
+                        color,
+                        rect
+                    )
+
+            else:
+
+                for y in res:
+                    rect = (
+                        x * consts.GUNIT_SIZE_X + consts.LINE_START_Y[0] + consts.LINE_WIDTH,
+                        consts.LINE_START_X[1] - (y * consts.GUNIT_SIZE_Y),
+                        2,
+                        2
+                    )
+                    if abs(y) <= consts.GRAPH_MAX_Y:
+                        pygame.draw.rect(
+                            window,
+                            color,
+                            rect
+                        )
 
         finally:
             x += consts.GRAPHINTERVAL
@@ -114,7 +137,7 @@ def main():
         print("Done drawing numbers")
 
     # add more draw_points commands to see more graphs
-    draw_points(f=func.f, color=colors.BLACK)
+    draw_points(f=func.f, color=colors.GREEN)
     print("Done drawing points")
 
     pygame.display.update()

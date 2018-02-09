@@ -5,5 +5,5 @@ import math
 
 
 def f(x):
-    return math.ceil(x)
+    return math.sqrt(4-x**2), -math.sqrt(4-x**2)
 
